@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="theme-color" content="#1b3a4b">
+  <title>提交成功</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-success">
+  <div class="success-panel">
+    <div class="success-mark">✓</div>
+    <h1>预约已提交</h1>
+    <p class="success-no">单号：<strong id="leadNo">—</strong></p>
+    <p class="success-tip" id="successTip">志勇防水工作人员将在 24 小时内与您电话联系，确认上门查勘安排。请保持手机畅通。</p>
+    <a class="hotline" id="successCall" href="tel:" style="display:flex;margin-bottom:0">
+      <span class="hotline-label">如需紧急沟通，请拨打</span>
+      <span class="hotline-number" id="successPhone"></span>
+      <span class="hotline-action">拨打</span>
+    </a>
+    <a href="index.html" class="btn-outline">返回首页</a>
+  </div>
+  <script src="js/config.js"></script>
+  <script src="js/config.local.js"></script>
+  <script src="js/config-boot.js"></script>
+  <script>
+    var cfg = window.APP_CONFIG;
+    var params = new URLSearchParams(location.search);
+    var no = params.get('lead_no') || '—';
+    var urgency = params.get('urgency') || '';
+    document.getElementById('leadNo').textContent = no;
+    document.getElementById('successPhone').textContent = cfg.BOSS_PHONE;
+    document.getElementById('successCall').href = 'tel:' + cfg.BOSS_PHONE;
+    document.title = cfg.BRAND_NAME + ' · 提交成功';
+    if (urgency.indexOf('紧急') === 0) {
+      document.getElementById('successTip').textContent =
+        '志勇防水已收到您的预约。紧急单将优先处理，工作人员将在 2 小时内与您电话联系。请保持手机畅通。';
+    }
+  </script>
+</body>
+</html>

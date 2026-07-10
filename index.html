@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="theme-color" content="#1b3a4b">
+  <title>志勇防水 · 预约上门查勘</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="demoRibbon" class="demo-ribbon hidden">预览模式 · 数据保存在本机，不会实际上传</div>
+
+  <header class="site-header">
+    <div class="brand-strip">
+      <span class="brand-name" id="brandName">志勇防水</span>
+      <span class="brand-tag">官方预约</span>
+    </div>
+    <a class="hotline" id="topCall" href="tel:13022222222">
+      <span class="hotline-label">服务专线</span>
+      <span class="hotline-number" id="topPhone">13022222222</span>
+      <span class="hotline-action">拨打</span>
+    </a>
+    <p class="fee-notice">上门查勘交通费按实际距离收取，具体金额电话沟通</p>
+  </header>
+
+  <main class="main">
+    <section class="intro">
+      <h1>预约上门查勘</h1>
+      <p>留下联系方式并选择问题类型，工作人员将尽快与您联系。</p>
+    </section>
+
+    <form id="leadForm" class="form-card" novalidate>
+      <div class="form-progress">
+        <div class="progress-bar"></div>
+        <p class="progress-text">已填 <span id="progressNum">0</span>/4 项</p>
+      </div>
+
+      <div class="field">
+        <label for="phone">手机号码</label>
+        <input id="phone" name="phone" type="tel" inputmode="numeric" maxlength="11" placeholder="11位手机号" autocomplete="tel">
+        <p class="field-error" data-err="phone"></p>
+      </div>
+      <div class="field">
+        <label for="location">所在位置</label>
+        <input id="location" name="location" type="text" placeholder="小区名、街道或门牌">
+        <p class="field-error" data-err="location"></p>
+      </div>
+      <div class="field">
+        <label for="problemType">问题类型</label>
+        <select id="problemType" name="problemType">
+          <option value="">请选择大致问题</option>
+        </select>
+        <p class="field-error" data-err="problemType"></p>
+      </div>
+      <div class="field">
+        <label for="description">问题描述</label>
+        <textarea id="description" name="description" rows="4" placeholder="请简要说明漏水位置、持续时间等情况"></textarea>
+        <p class="field-error" data-err="description"></p>
+      </div>
+
+      <details class="form-section optional">
+        <summary>更多信息（可选）</summary>
+        <div class="field">
+          <label for="name">联系人姓名</label>
+          <input id="name" name="name" type="text" placeholder="请输入" autocomplete="name">
+          <p class="field-error" data-err="name"></p>
+        </div>
+        <div class="field optional-field">
+          <label for="urgency">紧急程度</label>
+          <select id="urgency" name="urgency">
+            <option value="">不指定</option>
+          </select>
+          <p class="field-error" data-err="urgency"></p>
+        </div>
+      </details>
+
+      <label class="agreement">
+        <input type="checkbox" id="agree">
+        <span>我已阅读并同意平台与我联系，后续服务及款项支付通过平台办理</span>
+      </label>
+      <p class="field-error" data-err="agree"></p>
+      <button type="submit" class="btn-submit" id="submitBtn">提交预约</button>
+    </form>
+
+    <footer class="site-footer">
+      <p>服务时间 8:00—20:00（紧急报修除外）</p>
+    </footer>
+  </main>
+
+  <script src="js/config.js"></script>
+  <script src="js/config.local.js"></script>
+  <script src="js/config-boot.js"></script>
+  <script src="js/demo-store.js"></script>
+  <script src="js/form.js"></script>
+</body>
+</html>

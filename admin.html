@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#1b3a4b">
+  <title>意向单管理</title>
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+  <div id="demoRibbon" class="demo-ribbon hidden">预览模式 · 账号 admin1 / admin2，密码 changeme123</div>
+
+  <div id="loginView" class="view hidden">
+    <div class="login-wrap">
+      <div class="login-header">
+        <h1>意向单管理</h1>
+        <p>志勇防水 · 内部工作台</p>
+      </div>
+      <div class="login-form">
+        <input id="loginUser" type="text" placeholder="用户名" autocomplete="username">
+        <input id="loginPass" type="password" placeholder="密码" autocomplete="current-password">
+        <button id="loginBtn" type="button" class="btn-primary">登录</button>
+        <p class="form-error" id="loginErr"></p>
+      </div>
+    </div>
+  </div>
+
+  <div id="appView" class="view hidden">
+    <header class="toolbar">
+      <div class="toolbar-top">
+        <h1>意向单</h1>
+        <div class="toolbar-actions">
+          <span class="user-tag" id="userBadge"></span>
+          <button type="button" class="icon-btn" id="refreshBtn" title="刷新">↻</button>
+          <button type="button" class="icon-btn" id="logoutBtn" title="退出">退出</button>
+        </div>
+      </div>
+      <div class="filter-bar" id="statusTabs"></div>
+    </header>
+
+    <main id="listView" class="content">
+      <div id="leadList" class="order-list"></div>
+      <p id="emptyMsg" class="empty-state hidden">当前筛选条件下暂无记录</p>
+    </main>
+
+    <section id="detailView" class="detail-panel hidden">
+      <button type="button" class="nav-back" id="backBtn">返回列表</button>
+      <div id="detailContent"></div>
+    </section>
+  </div>
+
+  <script src="js/config.js"></script>
+  <script src="js/config.local.js"></script>
+  <script src="js/config-boot.js"></script>
+  <script src="js/demo-store.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

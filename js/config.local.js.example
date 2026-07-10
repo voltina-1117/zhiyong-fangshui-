@@ -1,0 +1,13 @@
+/**
+ * 复制本文件为 config.local.js（已加入 .gitignore，不会提交密钥）
+ * 须在 config.js 之后加载（index.html 已按此顺序引入）
+ */
+Object.assign(window.APP_CONFIG, {
+  DEMO_MODE: false,
+
+  SUPABASE_URL: 'https://你的项目ID.supabase.co',
+  SUPABASE_ANON_KEY: '你的_publishable_或_anon_公钥',
+
+  CREATE_LEAD_URL: 'https://你的项目ID.supabase.co/functions/v1/create-lead',
+  ADMIN_API_URL: 'https://你的项目ID.supabase.co/functions/v1/admin-api',
+});
